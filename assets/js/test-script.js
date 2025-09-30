@@ -13,6 +13,7 @@ http.onreadystatechange = function () {
     if (http.readyState == 4 && http.status == 200) {
         var palette = JSON.parse(http.responseText).result;
         console.log(palette);
+        // data = palette; (NO ERROR IF I ADD THIS TO THE CODE.)
     }
 }
 
