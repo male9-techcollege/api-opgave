@@ -86,7 +86,9 @@ console.log('The green parameter is: ' + greenRgbParameterByMariePierreLessard);
 let blueRgbParameterByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
 console.log('The blue parameter is: ' + blueRgbParameterByMariePierreLessard);
 
-/* POTENTIAL TO DO: I could change the wording of the following to insert user input as the first 2 values of the input array. */
+/* POTENTIAL VARIANT (TO DO?): I could change the wording of the following to insert user input as the first 2 values of the input array. */
+/* In this particular colour-palette generator, the second colour is kept gray on purpose in order to guide the API and ensure that the result is pleasing. Since the 3 last colours chosen are based on the 2 first colours provided, including a neutral like a dark grey gives the generated palette a serious expression. Since greys tone down a palette, it is not likely that the result of this web app will be a jarringly colourful palette. 
+It's a bit restricting, but it's fine for the purpose of this school exercise. */
 let initialColoursByMariePierreLessard = {
     model: "default",
     input: [[redRgbParameterByMariePierreLessard, greenRgbParameterByMariePierreLessard, blueRgbParameterByMariePierreLessard], [90, 83, 82], "N", "N", "N"]
