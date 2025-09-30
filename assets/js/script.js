@@ -130,7 +130,7 @@ function viewByMariePierreLessard(data) {
     /* "The toString() method returns a string with array values separated by commas. The toString() method does not change the original array."
     https://www.w3schools.com/jsref/jsref_tostring_array.asp */
     firstRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[0].toString();
-    console.log(firstRgbColour); //This console.log shows no error.
+    console.log(firstRgbColourByMariePierreLessard); //This console.log shows no error.
     /* Console.log shows that the colour arrays are successfully converted to strings. */
     secondRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[1].toString();
     thirdRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[2].toString();
