@@ -79,26 +79,26 @@ https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
 
 /* DO NOT remove the last slash at the end of the URL. It will lead to a CORS error. */
 const colormindUrlByMariePierreLessard = 'http://colormind.io/api/';
-let redRgbParameter = generateRandomInteger();
-console.log('The red parameter is: ' + redRgbParameter);
-let greenRgbParameter = generateRandomInteger();
-console.log('The green parameter is: ' + greenRgbParameter);
-let blueRgbParameter = generateRandomInteger();
-console.log('The blue parameter is: ' + blueRgbParameter);
+let redRgbParameterByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
+console.log('The red parameter is: ' + redRgbParameterByMariePierreLessard);
+let greenRgbParameterByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
+console.log('The green parameter is: ' + greenRgbParameterByMariePierreLessard);
+let blueRgbParameterByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
+console.log('The blue parameter is: ' + blueRgbParameterByMariePierreLessard);
 
 /* POTENTIAL TO DO: I could change the wording of the following to insert user input as the first 2 values of the input array. */
 let initialColoursByMariePierreLessard = {
     model: "default",
-    input: [[redRgbParameter, greenRgbParameter, blueRgbParameter], [90, 83, 82], "N", "N", "N"]
+    input: [[redRgbParameterByMariePierreLessard, greenRgbParameterByMariePierreLessard, blueRgbParameterByMariePierreLessard], [90, 83, 82], "N", "N", "N"]
 }
 
-function generateRandomInteger() {
+function generateRandomIntegerByMariePierreLessard() {
     /* Returns a random integer from 0 to 255, inclusively
     https://www.w3schools.com/js/js_random.asp */
-    let randomInteger = Math.floor(Math.random() * 256);
+    let randomIntegerByMariePierreLessard = Math.floor(Math.random() * 256);
     // console.log(randomInteger); (No error returned.)
     /* If I don't explicitely state that the returned result of the function is randomInteger, I get an Undefined error. */
-    return randomInteger;
+    return randomIntegerByMariePierreLessard;
 };
 
 /* Source for the POST method: Francesco Saviano, "JavaScript and JSON: How to Work with JSON Data", Sep 12, 2024, Medium.com.
