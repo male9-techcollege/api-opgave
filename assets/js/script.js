@@ -79,11 +79,27 @@ https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
 
 /* DO NOT remove the last slash at the end of the URL. It will lead to a CORS error. */
 const colormindUrlByMariePierreLessard = 'http://colormind.io/api/';
+let redRgbParameter = generateRandomInteger();
+console.log('The red parameter is: ' + redRgbParameter);
+let greenRgbParameter = generateRandomInteger();
+console.log('The green parameter is: ' + greenRgbParameter);
+let blueRgbParameter = generateRandomInteger();
+console.log('The blue parameter is: ' + blueRgbParameter);
+
 /* POTENTIAL TO DO: I could change the wording of the following to insert user input as the first 2 values of the input array. */
 let initialColoursByMariePierreLessard = {
     model: "default",
-    input: [[44, 43, 44], [90, 83, 82], "N", "N", "N"]
+    input: [[redRgbParameter, greenRgbParameter, blueRgbParameter], [90, 83, 82], "N", "N", "N"]
 }
+
+function generateRandomInteger() {
+    /* Returns a random integer from 0 to 255, inclusively
+    https://www.w3schools.com/js/js_random.asp */
+    let randomInteger = Math.floor(Math.random() * 256);
+    // console.log(randomInteger); (No error returned.)
+    /* If I don't explicitely state that the returned result of the function is randomInteger, I get an Undefined error. */
+    return randomInteger;
+};
 
 /* Source for the POST method: Francesco Saviano, "JavaScript and JSON: How to Work with JSON Data", Sep 12, 2024, Medium.com.
 https://medium.com/@francesco.saviano87/javascript-and-json-how-to-work-with-json-data-c39ebc6360f7 
