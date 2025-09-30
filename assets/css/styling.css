@@ -1,4 +1,4 @@
-.output {
+.colour-palettes {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;

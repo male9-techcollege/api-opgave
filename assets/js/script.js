@@ -1,7 +1,7 @@
 /* Opgavens krav til kodning:
 
 DONE: Brug fetch og .then til at hente data.
-Skriv en view-funktion, der viser data i DOM'en.
+DONE: Skriv en view-funktion, der viser data i DOM'en.
 
 Tips
 DONE: Brug console.log(data) til at undersøge strukturen af den data, du modtager.
@@ -121,12 +121,28 @@ let fetchedColours = fetch(colormindUrl, {
     });
 
 function view(data) {
-    const outputContainer = document.getElementById('output');
-    /* The value of the variable fetchedColours is being changed to the RESULT of the function fetch(colormindUrl). */
+    /* The console.log in the second .then above (in the definition of fetchedColours) showed that Colormind sends a single key-value pair, where the key is called result, and the value is an array of 5 arrays, each of which represents a RGB colour.
+    Purpose of the following: the variable fetchedColours is now a JS object containing 1 key and a value that is an array with 5 arrays in it. */
     fetchedColours = data;
-    // console.log(fetchedColours);
+    console.log("JS object fetchedColours: ", fetchedColours); //This console.log shows no error.
+    /* If there had been more keys, it should have been possible to use only a portion of the data returned by the function fetch(colormindUrl) by writing: data.result. 
+    However, whenever I use .result, I get an error... */
+    /* "The toString() method returns a string with array values separated by commas. The toString() method does not change the original array."
+    https://www.w3schools.com/jsref/jsref_tostring_array.asp */
+    firstRgbColour = fetchedColours.result[0].toString();
+    console.log(firstRgbColour); //This console.log shows no error.
+    /* Console.log shows that the colour arrays are successfully converted to strings. */
+    secondRgbColour = fetchedColours.result[1].toString();
+    thirdRgbColour = fetchedColours.result[2].toString();
+    fourthRgbColour = fetchedColours.result[3].toString();
+    fifthRgbColour = fetchedColours.result[4].toString();
 
-    //     outputContainer.innerHTML = `
-    //     <div style="background-color: rgb(${fetchedColours.keyname})"></div>
-    //   `;
+    const outputContainer = document.getElementById('output');
+    outputContainer.innerHTML = `
+        <div style="background-color: rgb(${firstRgbColour}">Farve 1</div>
+        <div style="background-color: rgb(${secondRgbColour}">Farve 2</div>
+        <div style="background-color: rgb(${thirdRgbColour}">Farve 3</div>
+        <div style="background-color: rgb(${fourthRgbColour}">Farve 4</div>
+        <div style="background-color: rgb(${fifthRgbColour}">Farve 5</div>
+    `;
 }
