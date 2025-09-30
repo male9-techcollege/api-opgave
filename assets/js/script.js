@@ -137,7 +137,7 @@ function view(data) {
     fourthRgbColour = fetchedColours.result[3].toString();
     fifthRgbColour = fetchedColours.result[4].toString();
 
-    const outputContainer = document.getElementById('output');
+    const outputContainer = document.getElementById('outputByMariePierreLessard');
     outputContainer.innerHTML = `
         <div style="background-color: rgb(${firstRgbColour}">Farve 1</div>
         <div style="background-color: rgb(${secondRgbColour}">Farve 2</div>
