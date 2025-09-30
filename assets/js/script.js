@@ -78,9 +78,9 @@ https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
 */
 
 /* DO NOT remove the last slash at the end of the URL. It will lead to a CORS error. */
-const colormindUrl = 'http://colormind.io/api/';
+const colormindUrlByMariePierreLessard = 'http://colormind.io/api/';
 /* POTENTIAL TO DO: I could change the wording of the following to insert user input as the first 2 values of the input array. */
-let initialColours = {
+let initialColoursByMariePierreLessard = {
     model: "default",
     input: [[44, 43, 44], [90, 83, 82], "N", "N", "N"]
 }
@@ -89,14 +89,14 @@ let initialColours = {
 https://medium.com/@francesco.saviano87/javascript-and-json-how-to-work-with-json-data-c39ebc6360f7 
 The script example provided by TechCollege was very similar to the examples given in this article. As a consequence, it looks like more was taken from the article, but the rest had been taught to us in class.
 */
-let fetchedColours = fetch(colormindUrl, {
+let fetchedColoursByMariePierreLessard = fetch(colormindUrlByMariePierreLessard, {
     method: 'POST',
     /* Francesco Saviano's article said that the following needs to be specified, but I only made my code work after hiding this part.
     headers: {
         'Content-Type': 'application/json'
     },
     */
-    body: JSON.stringify(initialColours)
+    body: JSON.stringify(initialColoursByMariePierreLessard)
 })
     .then((response) => {
         if (!response.ok) {
@@ -114,35 +114,35 @@ let fetchedColours = fetch(colormindUrl, {
     })
     .then((data) => {
         console.log('This data was returned: ', data);
-        view(data);
+        viewByMariePierreLessard(data);
     })
     .catch((error) => {
         console.error('Error: ', error);
     });
 
-function view(data) {
-    /* The console.log in the second .then above (in the definition of fetchedColours) showed that Colormind sends a single key-value pair, where the key is called result, and the value is an array of 5 arrays, each of which represents a RGB colour.
-    Purpose of the following: the variable fetchedColours is now a JS object containing 1 key and a value that is an array with 5 arrays in it. */
-    fetchedColours = data;
-    console.log("JS object fetchedColours: ", fetchedColours); //This console.log shows no error.
-    /* If there had been more keys, it should have been possible to use only a portion of the data returned by the function fetch(colormindUrl) by writing: data.result. 
+function viewByMariePierreLessard(data) {
+    /* The console.log in the second .then above (in the definition of fetchedColoursByMariePierreLessard) showed that Colormind sends a single key-value pair, where the key is called result, and the value is an array of 5 arrays, each of which represents a RGB colour.
+    Purpose of the following: the variable fetchedColoursByMariePierreLessard is now a JS object containing 1 key and a value that is an array with 5 arrays in it. */
+    fetchedColoursByMariePierreLessard = data;
+    console.log("JS object fetchedColoursByMariePierreLessard: ", fetchedColoursByMariePierreLessard); //This console.log shows no error.
+    /* If there had been more keys, it should have been possible to use only a portion of the data returned by the function fetch(colormindUrlByMariePierreLessard) by writing: data.result. 
     However, whenever I use .result, I get an error... */
     /* "The toString() method returns a string with array values separated by commas. The toString() method does not change the original array."
     https://www.w3schools.com/jsref/jsref_tostring_array.asp */
-    firstRgbColour = fetchedColours.result[0].toString();
+    firstRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[0].toString();
     console.log(firstRgbColour); //This console.log shows no error.
     /* Console.log shows that the colour arrays are successfully converted to strings. */
-    secondRgbColour = fetchedColours.result[1].toString();
-    thirdRgbColour = fetchedColours.result[2].toString();
-    fourthRgbColour = fetchedColours.result[3].toString();
-    fifthRgbColour = fetchedColours.result[4].toString();
+    secondRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[1].toString();
+    thirdRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[2].toString();
+    fourthRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[3].toString();
+    fifthRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[4].toString();
 
-    const outputContainer = document.getElementById('outputByMariePierreLessard');
-    outputContainer.innerHTML = `
-        <div style="background-color: rgb(${firstRgbColour}">Farve 1</div>
-        <div style="background-color: rgb(${secondRgbColour}">Farve 2</div>
-        <div style="background-color: rgb(${thirdRgbColour}">Farve 3</div>
-        <div style="background-color: rgb(${fourthRgbColour}">Farve 4</div>
-        <div style="background-color: rgb(${fifthRgbColour}">Farve 5</div>
+    const outputContainerByMariePierreLessard = document.getElementById('outputByMariePierreLessard');
+    outputContainerByMariePierreLessard.innerHTML = `
+        <div style="background-color: rgb(${firstRgbColourByMariePierreLessard}">Farve 1</div>
+        <div style="background-color: rgb(${secondRgbColourByMariePierreLessard}">Farve 2</div>
+        <div style="background-color: rgb(${thirdRgbColourByMariePierreLessard}">Farve 3</div>
+        <div style="background-color: rgb(${fourthRgbColourByMariePierreLessard}">Farve 4</div>
+        <div style="background-color: rgb(${fifthRgbColourByMariePierreLessard}">Farve 5</div>
     `;
 }
