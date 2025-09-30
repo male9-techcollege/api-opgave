@@ -156,7 +156,7 @@ function viewByMariePierreLessard(data) {
     /* "The toString() method returns a string with array values separated by commas. The toString() method does not change the original array."
     https://www.w3schools.com/jsref/jsref_tostring_array.asp */
     firstRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[0].toString();
-    console.log(firstRgbColourByMariePierreLessard); //This console.log shows no error.
+    //console.log(firstRgbColourByMariePierreLessard); (This console.log shows no error.
     /* Console.log shows that the colour arrays are successfully converted to strings. */
     secondRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[1].toString();
     thirdRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[2].toString();
@@ -165,10 +165,10 @@ function viewByMariePierreLessard(data) {
 
     const outputContainerByMariePierreLessard = document.getElementById('outputByMariePierreLessard');
     outputContainerByMariePierreLessard.innerHTML = `
-        <div style="background-color: rgb(${firstRgbColourByMariePierreLessard}">Farve 1</div>
-        <div style="background-color: rgb(${secondRgbColourByMariePierreLessard}">Farve 2</div>
-        <div style="background-color: rgb(${thirdRgbColourByMariePierreLessard}">Farve 3</div>
-        <div style="background-color: rgb(${fourthRgbColourByMariePierreLessard}">Farve 4</div>
-        <div style="background-color: rgb(${fifthRgbColourByMariePierreLessard}">Farve 5</div>
+        <div style="background-color: rgb(${firstRgbColourByMariePierreLessard}">RGB(${firstRgbColourByMariePierreLessard})</div>
+        <div style="background-color: rgb(${secondRgbColourByMariePierreLessard}">RGB(${secondRgbColourByMariePierreLessard})</div>
+        <div style="background-color: rgb(${thirdRgbColourByMariePierreLessard}">RGB(${thirdRgbColourByMariePierreLessard})</div>
+        <div style="background-color: rgb(${fourthRgbColourByMariePierreLessard}">RGB(${fourthRgbColourByMariePierreLessard})</div>
+        <div style="background-color: rgb(${fifthRgbColourByMariePierreLessard}">RGB(${fifthRgbColourByMariePierreLessard})</div>
     `;
 }
