@@ -79,19 +79,27 @@ https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
 
 /* DO NOT remove the last slash at the end of the URL. It will lead to a CORS error. */
 const colormindUrlByMariePierreLessard = 'http://colormind.io/api/';
-let redRgbParameterByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
-console.log('The red parameter is: ' + redRgbParameterByMariePierreLessard);
-let greenRgbParameterByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
-console.log('The green parameter is: ' + greenRgbParameterByMariePierreLessard);
-let blueRgbParameterByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
-console.log('The blue parameter is: ' + blueRgbParameterByMariePierreLessard);
+
+let redRgbParameter1ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
+console.log('The first red parameter is: ' + redRgbParameter1ByMariePierreLessard);
+let greenRgbParameter1ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
+console.log('The first green parameter is: ' + greenRgbParameter1ByMariePierreLessard);
+let blueRgbParameter1ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
+console.log('The first blue parameter is: ' + blueRgbParameter1ByMariePierreLessard);
+
+let redRgbParameter2ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
+console.log('The second red parameter is: ' + redRgbParameter2ByMariePierreLessard);
+let greenRgbParameter2ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
+console.log('The second green parameter is: ' + greenRgbParameter2ByMariePierreLessard);
+let blueRgbParameter2ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
+console.log('The second blue parameter is: ' + blueRgbParameter2ByMariePierreLessard);
 
 /* POTENTIAL VARIANT (TO DO?): I could change the wording of the following to insert user input as the first 2 values of the input array. */
-/* In this particular colour-palette generator, the second colour is kept gray on purpose in order to guide the API and ensure that the result is pleasing. Since the 3 last colours chosen are based on the 2 first colours provided, including a neutral like a dark grey gives the generated palette a serious expression. Since greys tone down a palette, it is not likely that the result of this web app will be a jarringly colourful palette. 
-It's a bit restricting, but it's fine for the purpose of this school exercise. */
+/* I considered keeping gray as a second colour in order to guide the API. Since the 3 last colours chosen are based on the 2 first colours provided, including a neutral like a dark grey gives the generated palette a serious expression.  
+It's a bit restricting, and this is a school exercise, so I went for a fun colour-palette generator instead. */
 let initialColoursByMariePierreLessard = {
     model: "default",
-    input: [[redRgbParameterByMariePierreLessard, greenRgbParameterByMariePierreLessard, blueRgbParameterByMariePierreLessard], [90, 83, 82], "N", "N", "N"]
+    input: [[redRgbParameter1ByMariePierreLessard, greenRgbParameter1ByMariePierreLessard, blueRgbParameter1ByMariePierreLessard], [redRgbParameter2ByMariePierreLessard, greenRgbParameter2ByMariePierreLessard, blueRgbParameter2ByMariePierreLessard], "N", "N", "N"]
 }
 
 function generateRandomIntegerByMariePierreLessard() {
