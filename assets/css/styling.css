@@ -12,6 +12,7 @@
     flex-flow: row wrap;
     gap: 1rem;
     padding: 1rem;
+    margin-block: 1rem;
 
     border: 2px solid lightgrey;
 }
@@ -56,4 +57,8 @@
 
 .btn-by-Marie-Pierre-Lessard:active {
     background: linear-gradient(to top, rgb(76, 76, 76) 25%, rgb(119, 119, 119) 100%);
+}
+
+.global-footer {
+    margin-top: 1rem;
 }
