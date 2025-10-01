@@ -77,39 +77,14 @@ https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
 https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
 */
 
+/* ABOUT THIS CHOICE OF MODULE: 
+It would be possible to use the code below to allow a user to choose the 2 first colours required by the API to generate a palette.
+The source of the initial colours could vary, perhaps with a switch statement, based on the section of the site with which the user is interacting.
+*/
+import { initialColoursByMariePierreLessard } from "./modules/random-colours.js";
+
 /* DO NOT remove the last slash at the end of the URL. It will lead to a CORS error. */
 const colormindUrlByMariePierreLessard = 'http://colormind.io/api/';
-
-let redRgbParameter1ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
-console.log('The first red parameter is: ' + redRgbParameter1ByMariePierreLessard);
-let greenRgbParameter1ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
-console.log('The first green parameter is: ' + greenRgbParameter1ByMariePierreLessard);
-let blueRgbParameter1ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
-console.log('The first blue parameter is: ' + blueRgbParameter1ByMariePierreLessard);
-
-let redRgbParameter2ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
-console.log('The second red parameter is: ' + redRgbParameter2ByMariePierreLessard);
-let greenRgbParameter2ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
-console.log('The second green parameter is: ' + greenRgbParameter2ByMariePierreLessard);
-let blueRgbParameter2ByMariePierreLessard = generateRandomIntegerByMariePierreLessard();
-console.log('The second blue parameter is: ' + blueRgbParameter2ByMariePierreLessard);
-
-/* POTENTIAL VARIANT (TO DO?): I could change the wording of the following to insert user input as the first 2 values of the input array. */
-/* I considered keeping gray as a second colour in order to guide the API. Since the 3 last colours chosen are based on the 2 first colours provided, including a neutral like a dark grey gives the generated palette a serious expression.  
-It's a bit restricting, and this is a school exercise, so I went for a fun colour-palette generator instead. */
-let initialColoursByMariePierreLessard = {
-    model: "default",
-    input: [[redRgbParameter1ByMariePierreLessard, greenRgbParameter1ByMariePierreLessard, blueRgbParameter1ByMariePierreLessard], [redRgbParameter2ByMariePierreLessard, greenRgbParameter2ByMariePierreLessard, blueRgbParameter2ByMariePierreLessard], "N", "N", "N"]
-}
-
-function generateRandomIntegerByMariePierreLessard() {
-    /* Returns a random integer from 0 to 255, inclusively
-    https://www.w3schools.com/js/js_random.asp */
-    let randomIntegerByMariePierreLessard = Math.floor(Math.random() * 256);
-    // console.log(randomInteger); (No error returned.)
-    /* If I don't explicitely state that the returned result of the function is randomInteger, I get an Undefined error. */
-    return randomIntegerByMariePierreLessard;
-};
 
 /* Source for the POST method: Francesco Saviano, "JavaScript and JSON: How to Work with JSON Data", Sep 12, 2024, Medium.com.
 https://medium.com/@francesco.saviano87/javascript-and-json-how-to-work-with-json-data-c39ebc6360f7 
@@ -138,6 +113,10 @@ let fetchedColoursByMariePierreLessard = fetch(colormindUrlByMariePierreLessard,
             return response.json();
         }
     })
+    /* In strict mode, it is forbidden to duplicate parameter names, so this parameter cannot be named the same as the parameter above. 
+    "It is also a syntax error in non-strict mode to have duplicate parameter names, if the function has a default parameter, rest parameter, or destructured parameter."
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
+    */
     .then((data) => {
         console.log('This data was returned: ', data);
         viewByMariePierreLessard(data);
@@ -155,35 +134,35 @@ function viewByMariePierreLessard(data) {
     However, whenever I use .result, I get an error... */
     /* "The toString() method returns a string with array values separated by commas. The toString() method does not change the original array."
     https://www.w3schools.com/jsref/jsref_tostring_array.asp */
-    firstRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[0].toString();
+    let firstRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[0].toString();
     //console.log(firstRgbColourByMariePierreLessard); (This console.log shows no error.
     /* Console.log shows that the colour arrays are successfully converted to strings. */
-    secondRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[1].toString();
-    thirdRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[2].toString();
-    fourthRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[3].toString();
-    fifthRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[4].toString();
+    let secondRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[1].toString();
+    let thirdRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[2].toString();
+    let fourthRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[3].toString();
+    let fifthRgbColourByMariePierreLessard = fetchedColoursByMariePierreLessard.result[4].toString();
 
     const outputContainerByMariePierreLessard = document.getElementById('outputByMariePierreLessard');
     outputContainerByMariePierreLessard.innerHTML = `
-        <div>
-            <div style="background-color: rgb(${firstRgbColourByMariePierreLessard}">Colour 1: </div>
-            <div style="border: 2px solid rgb(${firstRgbColourByMariePierreLessard}">rgb(${firstRgbColourByMariePierreLessard})</div>
-        </div>
-        <div>
-            <div style="background-color: rgb(${secondRgbColourByMariePierreLessard}">Colour 2: </div>
-            <div style="border: 2px solid rgb(${secondRgbColourByMariePierreLessard}">rgb(${secondRgbColourByMariePierreLessard})</div>
-        </div>
-        <div>
-            <div style="background-color: rgb(${thirdRgbColourByMariePierreLessard}">Colour 3: </div>
-            <div style="border: 2px solid rgb(${thirdRgbColourByMariePierreLessard}">rgb(${thirdRgbColourByMariePierreLessard})</div>
-        </div>
-        <div>
-            <div style="background-color: rgb(${fourthRgbColourByMariePierreLessard}">Colour 4: </div>
-            <div style="border: 2px solid rgb(${fourthRgbColourByMariePierreLessard}">rgb(${fourthRgbColourByMariePierreLessard})</div>
-        </div>
-        <div>
-            <div style="background-color: rgb(${fifthRgbColourByMariePierreLessard}">Colour 5: </div>
-            <div style="border: 2px solid rgb(${fifthRgbColourByMariePierreLessard}">rgb(${fifthRgbColourByMariePierreLessard})</div>
-        </div>
-    `;
+            <div>
+                <div style="background-color: rgb(${firstRgbColourByMariePierreLessard}">Colour 1: </div>
+                <div style="border: 2px solid rgb(${firstRgbColourByMariePierreLessard}">rgb(${firstRgbColourByMariePierreLessard})</div>
+            </div>
+            <div>
+                <div style="background-color: rgb(${secondRgbColourByMariePierreLessard}">Colour 2: </div>
+                <div style="border: 2px solid rgb(${secondRgbColourByMariePierreLessard}">rgb(${secondRgbColourByMariePierreLessard})</div>
+            </div>
+            <div>
+                <div style="background-color: rgb(${thirdRgbColourByMariePierreLessard}">Colour 3: </div>
+                <div style="border: 2px solid rgb(${thirdRgbColourByMariePierreLessard}">rgb(${thirdRgbColourByMariePierreLessard})</div>
+            </div>
+            <div>
+                <div style="background-color: rgb(${fourthRgbColourByMariePierreLessard}">Colour 4: </div>
+                <div style="border: 2px solid rgb(${fourthRgbColourByMariePierreLessard}">rgb(${fourthRgbColourByMariePierreLessard})</div>
+            </div>
+            <div>
+                <div style="background-color: rgb(${fifthRgbColourByMariePierreLessard}">Colour 5: </div>
+                <div style="border: 2px solid rgb(${fifthRgbColourByMariePierreLessard}">rgb(${fifthRgbColourByMariePierreLessard})</div>
+            </div>
+        `;
 }

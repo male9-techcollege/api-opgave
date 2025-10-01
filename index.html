@@ -10,7 +10,40 @@
         href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Puritan:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styling.css">
-    <script src="./assets/js/script.js"></script>
+    <!-- Adding the attribute type="module" broke my code (we had to update an already delivered assignment by splitting our JS into modules). 
+    "Everything in the test project works perfectly, but when I tried to implement this code into a script file in the project - literally copying and pasting from the working version - I got an error saying certain properties could not be read. After failing to debug for sometime, I randomly tried removing type="module" from the script tag link in HTML, and boom, everything worked. Does anyone have an idea of why this would be? (...)
+    That's because JS modules automatically run in strict mode, and because of strict mode that this inside your function won't be window, but undefined instead. – 
+    – Gerardo Furtado
+    Commented May 14, 2022 at 15:32 (...)
+    that's a pure javascript thing: you have to do that code working on "use strict" mode. There is the this issue I mentioned, then I saw a couple of undeclared variables in the for loops, etc. (...)
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode (...)
+    – Gerardo Furtado
+    Commented May 16, 2022 at 0:33 (...)
+    Per the comments, the following lines in my original code were not working in strict mode:
+
+    this.uStates = uStates;
+    this.uStatePaths = uStatePaths;
+    The fix was simple, I just needed to write the following instead:
+
+    window.uStates = uStates;
+    window.uStatePaths = uStatePaths;"
+    https://stackoverflow.com/questions/72236876/why-does-my-d3-code-break-when-i-set-the-script-type-to-module -->
+    <!-- "JavaScript's strict mode is a way to opt in to a restricted variant of JavaScript, thereby implicitly opting-out of "sloppy mode". Strict mode isn't just a subset: it intentionally has different semantics from normal code. Strict mode code and non-strict mode code can coexist, so scripts can opt into strict mode incrementally.
+
+    Strict mode makes several changes to normal JavaScript semantics:
+    
+    1. Eliminates some JavaScript silent errors by changing them to throw errors.
+    2. Fixes mistakes that make it difficult for JavaScript engines to perform optimizations: strict mode code can sometimes be made to run faster than identical code that's not strict mode.
+    3. Prohibits some syntax likely to be defined in future versions of ECMAScript. (...)
+
+    Strict mode changes both syntax and runtime behavior. Changes generally fall into these categories:
+    - changes converting mistakes into errors (as syntax errors or at runtime)
+    - changes simplifying how variable references are resolved
+    - changes simplifying eval and arguments
+    - changes making it easier to write "secure" JavaScript
+    - changes anticipating future ECMAScript evolution." 
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode -->
+    <script type="module" src="./assets/js/script.js"></script>
     <title>Marie-Pierre Lessards API-opgave</title>
 </head>
 
