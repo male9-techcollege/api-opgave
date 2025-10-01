@@ -1,6 +1,21 @@
 :root {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Caudex, 'Times New Roman', Times, serif;
     font-size: 16px;
+}
+
+h1 {
+    font-family: Montserrat,
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Puritan, Arial, Helvetica, sans-serif;
 }
 
 .colour-palettes-by-Marie-Pierre-Lessard {
@@ -45,7 +60,7 @@
     /* Interestingly, Opera overrides my global styling (under :root) inside of the button and uses a sans-serif font instead! It also picks the font size.
     Chrome didn't do that. 
     On the upside, Opera provides rollover effects by default. I started overriding it why I created this class, I think! */
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Caudex, 'Times New Roman', Times, serif;
     font-size: 1rem;
 }
 
