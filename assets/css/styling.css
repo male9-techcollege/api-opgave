@@ -1,8 +1,58 @@
+:root {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
 .colour-palettes-by-Marie-Pierre-Lessard {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    /* "The flex-flow CSS shorthand property specifies the direction of a flex container,
+        as well as its wrapping behavior."
+        https: //developer.mozilla.org/en-US/docs/Web/CSS/flex-flow 
+        It's flex-direction and flex-wrap in one property. */
+    flex-flow: row wrap;
     gap: 1rem;
     padding: 1rem;
 
     border: 2px solid lightgrey;
+}
+
+.colour-palettes-by-Marie-Pierre-Lessard div {
+    /* flex is a shorthand property for the following.
+    "CSS Syntax 
+    flex: flex-grow flex-shrink flex-basis|auto|initial|inherit;"
+    https: //www.w3schools.com/cssref/css3_pr_flex.php */
+    flex-grow: 1;
+}
+
+.colour-palettes-by-Marie-Pierre-Lessard div div:first-of-type {
+    color: transparent;
+}
+
+.colour-palettes-by-Marie-Pierre-Lessard div div:last-of-type {
+    text-align: center;
+}
+
+.btn-by-Marie-Pierre-Lessard {
+    /* Button styling largely taken from my delivery of the form-styling assignment from GF2 */
+    padding-inline: 1.6rem;
+    padding-block: .4rem;
+    border-width: 1px;
+    border-radius: 4px;
+    background: linear-gradient(to top, rgb(157, 157, 157) 25%, rgb(195, 195, 195) 100%);
+
+    /* Interestingly, Opera overrides my global styling (under :root) inside of the button and uses a sans-serif font instead! It also picks the font size.
+    Chrome didn't do that. 
+    On the upside, Opera provides rollover effects by default. I started overriding it why I created this class, I think! */
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+}
+
+.btn-by-Marie-Pierre-Lessard:hover,
+.btn-by-Marie-Pierre-Lessard:focus {
+    background: linear-gradient(to top, rgb(44, 34, 222) 25%, rgb(90, 82, 250) 100%);
+    color: white;
+}
+
+.btn-by-Marie-Pierre-Lessard:active {
+    background: linear-gradient(to top, rgb(76, 76, 76) 25%, rgb(119, 119, 119) 100%);
 }

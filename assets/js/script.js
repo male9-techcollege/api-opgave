@@ -165,10 +165,25 @@ function viewByMariePierreLessard(data) {
 
     const outputContainerByMariePierreLessard = document.getElementById('outputByMariePierreLessard');
     outputContainerByMariePierreLessard.innerHTML = `
-        <div style="background-color: rgb(${firstRgbColourByMariePierreLessard}">RGB(${firstRgbColourByMariePierreLessard})</div>
-        <div style="background-color: rgb(${secondRgbColourByMariePierreLessard}">RGB(${secondRgbColourByMariePierreLessard})</div>
-        <div style="background-color: rgb(${thirdRgbColourByMariePierreLessard}">RGB(${thirdRgbColourByMariePierreLessard})</div>
-        <div style="background-color: rgb(${fourthRgbColourByMariePierreLessard}">RGB(${fourthRgbColourByMariePierreLessard})</div>
-        <div style="background-color: rgb(${fifthRgbColourByMariePierreLessard}">RGB(${fifthRgbColourByMariePierreLessard})</div>
+        <div>
+            <div style="background-color: rgb(${firstRgbColourByMariePierreLessard}">Colour 1: </div>
+            <div style="border: 2px solid rgb(${firstRgbColourByMariePierreLessard}">rgb(${firstRgbColourByMariePierreLessard})</div>
+        </div>
+        <div>
+            <div style="background-color: rgb(${secondRgbColourByMariePierreLessard}">Colour 2: </div>
+            <div style="border: 2px solid rgb(${secondRgbColourByMariePierreLessard}">rgb(${secondRgbColourByMariePierreLessard})</div>
+        </div>
+        <div>
+            <div style="background-color: rgb(${thirdRgbColourByMariePierreLessard}">Colour 3: </div>
+            <div style="border: 2px solid rgb(${thirdRgbColourByMariePierreLessard}">rgb(${thirdRgbColourByMariePierreLessard})</div>
+        </div>
+        <div>
+            <div style="background-color: rgb(${fourthRgbColourByMariePierreLessard}">Colour 4: </div>
+            <div style="border: 2px solid rgb(${fourthRgbColourByMariePierreLessard}">rgb(${fourthRgbColourByMariePierreLessard})</div>
+        </div>
+        <div>
+            <div style="background-color: rgb(${fifthRgbColourByMariePierreLessard}">Colour 5: </div>
+            <div style="border: 2px solid rgb(${fifthRgbColourByMariePierreLessard}">rgb(${fifthRgbColourByMariePierreLessard})</div>
+        </div>
     `;
 }
